@@ -13,3 +13,14 @@
   border: 5px solid green;
   margin-right: 15px;
 }
+
+
+.itemContainer img{ 
+  max-height: 250px; 
+  
+}
+
+.itemContainer{
+  display: flex;
+  justify-content: center;
+}

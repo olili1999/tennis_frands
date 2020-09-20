@@ -1,21 +1,51 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import UserCarousel from './components/UserCarousel.js';
+import Carousel from "react-material-ui-carousel";
 
-const TESTDATA = ["oliver", "james", "rohan", "bennett", "rylee"];
+const USERDATA = [
+  {
+    name: "Oliver Li",
+    image: "https://cdn.discordapp.com/attachments/755444435256344617/757279333046943835/oliver.jpg"
+  },
+  {
+    name: "James Xu",
+    image: "https://media-exp1.licdn.com/dms/image/C5603AQEv6YT7KZaq8Q/profile-displayphoto-shrink_400_400/0?e=1606348800&v=beta&t=cyDwsQJUHpY7dNtmE_MU9LJ_ul08FIx1ZU0mRmiyGMU"
+
+  },
+  {
+    name: "Oliver Li",
+    image: "https://cdn.discordapp.com/attachments/755444435256344617/757279333046943835/oliver.jpg"
+  },
+  {
+    name: "James Xu",
+    image: "https://media-exp1.licdn.com/dms/image/C5603AQEv6YT7KZaq8Q/profile-displayphoto-shrink_400_400/0?e=1606348800&v=beta&t=cyDwsQJUHpY7dNtmE_MU9LJ_ul08FIx1ZU0mRmiyGMU"
+
+  },
+  {
+    name: "Oliver Li",
+    image: "https://cdn.discordapp.com/attachments/755444435256344617/757279333046943835/oliver.jpg"
+  },
+  {
+    name: "James Xu",
+    image: "https://media-exp1.licdn.com/dms/image/C5603AQEv6YT7KZaq8Q/profile-displayphoto-shrink_400_400/0?e=1606348800&v=beta&t=cyDwsQJUHpY7dNtmE_MU9LJ_ul08FIx1ZU0mRmiyGMU"
+
+  }
+]
 
 function App() {
-  const cards = TESTDATA.map((person) => {
-    return (
-      <div className="card">
-        <h1> {person}</h1>
-      </div>
-    );
-  });
+
   return (
     <div className="App">
-      <div className="container">{cards}</div>
+      <UserCarousel userData={USERDATA}>
+        hey
+      </UserCarousel>
     </div>
+
+
+
+
   );
 }
 
