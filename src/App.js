@@ -3,6 +3,14 @@ import logo from "./logo.svg";
 import "./App.css";
 import UserCarousel from './components/UserCarousel.js';
 import Carousel from "react-material-ui-carousel";
+import 'semantic-ui-css/semantic.min.css';
+import NavBar from './components/NavBar.js';
+import Profile from './components/Profile.js';
+import Card from './components/CardTemplate.js';
+
+import { useState } from 'react';
+
+
 
 const USERDATA = [
   {
@@ -11,7 +19,7 @@ const USERDATA = [
   },
   {
     name: "James Xu",
-    image: "https://media-exp1.licdn.com/dms/image/C5603AQEv6YT7KZaq8Q/profile-displayphoto-shrink_400_400/0?e=1606348800&v=beta&t=cyDwsQJUHpY7dNtmE_MU9LJ_ul08FIx1ZU0mRmiyGMU"
+    image: "https://media-exp1.licdn.com/dms/image/C5603AQFbzCKIr1T9Tg/profile-displayphoto-shrink_400_400/0?e=1606953600&v=beta&t=FpGvuYJ7DqikFm692x_hFvliipzG2Yf2F0FgjKPqr-4"
 
   },
   {
@@ -20,7 +28,7 @@ const USERDATA = [
   },
   {
     name: "James Xu",
-    image: "https://media-exp1.licdn.com/dms/image/C5603AQEv6YT7KZaq8Q/profile-displayphoto-shrink_400_400/0?e=1606348800&v=beta&t=cyDwsQJUHpY7dNtmE_MU9LJ_ul08FIx1ZU0mRmiyGMU"
+    image: "https://media-exp1.licdn.com/dms/image/C5603AQFbzCKIr1T9Tg/profile-displayphoto-shrink_400_400/0?e=1606953600&v=beta&t=FpGvuYJ7DqikFm692x_hFvliipzG2Yf2F0FgjKPqr-4"
 
   },
   {
@@ -29,18 +37,29 @@ const USERDATA = [
   },
   {
     name: "James Xu",
-    image: "https://media-exp1.licdn.com/dms/image/C5603AQEv6YT7KZaq8Q/profile-displayphoto-shrink_400_400/0?e=1606348800&v=beta&t=cyDwsQJUHpY7dNtmE_MU9LJ_ul08FIx1ZU0mRmiyGMU"
+    image: "https://media-exp1.licdn.com/dms/image/C5603AQFbzCKIr1T9Tg/profile-displayphoto-shrink_400_400/0?e=1606953600&v=beta&t=FpGvuYJ7DqikFm692x_hFvliipzG2Yf2F0FgjKPqr-4"
 
   }
 ]
 
+
+const PROFILEDATA =
+{
+  name: "Hunter Li",
+  image: "https://media-exp1.licdn.com/dms/image/C4D03AQFoO54RCkhVBA/profile-displayphoto-shrink_400_400/0?e=1606953600&v=beta&t=z64Rd8lngK5rKySTaLdy4jC7Zq8a1PKWpmnLAXnFszE"
+}
+
+
+
 function App() {
+  const [activeItem, setActiveItem] = useState("Home");
 
   return (
     <div className="App">
-      <UserCarousel userData={USERDATA}>
+      <NavBar activeItem={activeItem} setActiveItem={setActiveItem} > </NavBar>
+      {activeItem === 'Home' ? (<UserCarousel userData={USERDATA}>
         hey
-      </UserCarousel>
+      </UserCarousel>) : null}
     </div>
 
 

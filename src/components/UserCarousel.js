@@ -1,6 +1,7 @@
 import Carousel from 'react-material-ui-carousel';
 import { Paper, Button } from '@material-ui/core';
 import React from "react";
+import CardTemplate from './CardTemplate.js';
 
 
 function UserCarousel(props) {
@@ -18,7 +19,7 @@ function UserCarousel(props) {
 
   }
   items.push(dataobj);
-
+  console.log(items);
   return (
     <Carousel navButtonsAlwaysVisible={true} interval='10000'>
       {
@@ -33,13 +34,9 @@ function Item(props) {
     <Paper className="itemContainer">
       {props.item.map((item, i) => {
         return <div>
-          <h2>{item.name}</h2>
-          <img src={item.image} />
+          <CardTemplate userData={item}> </CardTemplate>
         </div>
       })}
-
-      <Button className="CheckButton">
-      </Button>
     </Paper>
   )
 }

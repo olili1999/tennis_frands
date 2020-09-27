@@ -1,26 +1,19 @@
-.container {
-  height: 350px;
-  width: 100%;
-  border: 10px solid black;
-  display: flex;
-  overflow-y: hidden;
-  align-items: center;
-}
-
-.card {
+/* .card {
   height: 300px;
   min-width: 600px;
   border: 5px solid green;
   margin-right: 15px;
-}
+} */
 
-
-.itemContainer img{ 
-  max-height: 250px; 
-  
-}
 
 .itemContainer{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  height: 100%; 
 }
+
+.Card img{ 
+  object-fit: cover; 
+  max-height: 150px; 
+}
+
